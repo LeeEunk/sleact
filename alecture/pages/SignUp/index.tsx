@@ -64,7 +64,7 @@ const SignUp = () => {
     return <div>로딩중...</div>;
   }
 
-  if (data) {
+  if (data) { //로그인 정보 받아오면 워크스페이스로 이동
     return <Redirect to="/workspace/sleact/channel/일반" />;
   }
 
@@ -110,7 +110,7 @@ const SignUp = () => {
       </Form>
       <LinkContainer>
         이미 회원이신가요?&nbsp;
-        <Link to="/login">로그인 하러가기</Link>
+        <Link to="/login">로그인 하러가기</Link> 
       </LinkContainer>
     </div>
   );

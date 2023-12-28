@@ -78,17 +78,17 @@ const config: Configuration = {
     filename: '[name].js',
     publicPath: '/dist/',
   },
-  devServer: {
+  devServer: {//hot-reloading, cors local 환경에만 프록시 서버 설정
     historyApiFallback: true, // react router 주소를 사기 쳐주는 애
     port: 3090,
     devMiddleware: { publicPath: '/dist/' },
     static: { directory: path.resolve(__dirname) },
-    // proxy: {
-    //   '/api/': {
-    //     target: 'http://localhost:3095',
-    //     changeOrigin: true,
-    //   },
-    // },
+    proxy: { //프론트엔드 주소에서 api로 시작하는 애들은 3095로 변경하겠다
+      '/api/': {
+        target: 'http://localhost:3095',
+        changeOrigin: true,
+      },
+    },
   },
 };
 
